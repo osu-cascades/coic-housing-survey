@@ -1,0 +1,73 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Main Page</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="apple-touch-icon" href="icon.png">
+	<!-- Place favicon.ico in the root directory -->
+
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+	<div class="grid-container">
+		<div id="header-container layout-test">
+			<div class="inline-block">
+				<img id="logo-img" src="/resources/state-seal-2000-2000.png" alt="COIC Logo">
+			</div>
+			<div class="inline-block">
+				<h1>COIC Data Library</h1>
+			</div>
+		</div>
+		<div id="body-container" class="grid-container layout-test">
+			<div id="stakeholder-container" class="layout-test">
+				<h3>Stakeholer Type</h3>
+				<form action="">
+					<input type="checkbox" name="stakeholder-type" value="Item 1">Item 1 </br>
+					<input type="checkbox" name="stakeholder-type" value="Item 2">Item 2 </br>
+					<input type="checkbox" name="stakeholder-type" value="Item 3">Item 3 </br>
+					<input type="checkbox" name="stakeholder-type" value="Item 4">Item 4 </br>
+					<input type="checkbox" name="stakeholder-type" value="Item 5">Item 5 </br>
+				</form>
+			</div>
+			<div id="geography-container" class="layout-test">
+				<h3>Geographic Region</h3>
+				<form action="">
+					<input type="checkbox" name="stakeholder-type" value="Item 1">Item 1 </br>
+					<input type="checkbox" name="stakeholder-type" value="Item 2">Item 2 </br>
+					<input type="checkbox" name="stakeholder-type" value="Item 3">Item 3 </br>
+					<input type="checkbox" name="stakeholder-type" value="Item 4">Item 4 </br>
+					<input type="checkbox" name="stakeholder-type" value="Item 5">Item 5 </br>
+				</form>
+			</div>
+			<div id="question-container" class="layout-test">
+				<select name="question-select" id="question-select">
+					<option value="item-1">Item 1</option>
+					<option value="item-2">Item 2</option>
+					<option value="item-3">Item 3</option>
+					<option value="item-4">Item 4</option>
+					<option value="item-5">Item 5</option>
+				</select>
+			</div>
+			<div id="reset-container" class="layout-test">
+				<input type="button" onclick="reset()" value="Reset Selection">
+			</div>
+			<div id="answers-continer" class="layout-test">
+				<ul>
+					<li>Answer 1</li>
+					<li>Answer 2</li>
+					<li>Answer 3</li>
+					<li>Answer 4</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!-- Jquery CDN -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</body>
+</html>
