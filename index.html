@@ -27,21 +27,21 @@
 			<div id="stakeholder-container" class="layout-test">
 				<h3>Stakeholer Type</h3>
 				<form action="">
-					<input type="checkbox" name="stakeholder-type" value="Item 1">Item 1 </br>
-					<input type="checkbox" name="stakeholder-type" value="Item 2">Item 2 </br>
-					<input type="checkbox" name="stakeholder-type" value="Item 3">Item 3 </br>
-					<input type="checkbox" name="stakeholder-type" value="Item 4">Item 4 </br>
-					<input type="checkbox" name="stakeholder-type" value="Item 5">Item 5 </br>
+					<input class="check" type="checkbox" name="stakeholder-type" value="Item 1">Item 1 </br>
+					<input class="check" type="checkbox" name="stakeholder-type" value="Item 2">Item 2 </br>
+					<input class="check" type="checkbox" name="stakeholder-type" value="Item 3">Item 3 </br>
+					<input class="check" type="checkbox" name="stakeholder-type" value="Item 4">Item 4 </br>
+					<input class="check" type="checkbox" name="stakeholder-type" value="Item 5">Item 5 </br>
 				</form>
 			</div>
 			<div id="geography-container" class="layout-test">
 				<h3>Geographic Region</h3>
 				<form action="">
-					<input type="checkbox" name="stakeholder-type" value="Item 1">Item 1 </br>
-					<input type="checkbox" name="stakeholder-type" value="Item 2">Item 2 </br>
-					<input type="checkbox" name="stakeholder-type" value="Item 3">Item 3 </br>
-					<input type="checkbox" name="stakeholder-type" value="Item 4">Item 4 </br>
-					<input type="checkbox" name="stakeholder-type" value="Item 5">Item 5 </br>
+					<input class="check" type="checkbox" name="stakeholder-type" value="Item 1">Item 1 </br>
+					<input class="check" type="checkbox" name="stakeholder-type" value="Item 2">Item 2 </br>
+					<input class="check" type="checkbox" name="stakeholder-type" value="Item 3">Item 3 </br>
+					<input class="check" type="checkbox" name="stakeholder-type" value="Item 4">Item 4 </br>
+					<input class="check" type="checkbox" name="stakeholder-type" value="Item 5">Item 5 </br>
 				</form>
 			</div>
 			<div id="question-container" class="layout-test">
@@ -69,5 +69,10 @@
 
 	<!-- Jquery CDN -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script>
+		function reset() {
+			$(".check").prop("checked", false);
+		}
+	</script>
 </body>
 </html>
