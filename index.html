@@ -17,8 +17,9 @@
 	<div class="grid-container">
 		<div id="header-container layout-test">
 			<div class="inline-block">
-				<img id="logo-img" src="/resources/state-seal-2000-2000.png" alt="COIC Logo">
+				<img id="logo-img" src="./images/header3.jpg" alt="COIC Logo">
 			</div>
+		</br>
 			<div class="inline-block">
 				<h1>COIC Data Library</h1>
 			</div>
@@ -61,6 +62,7 @@
 					<option value="item-4">Item 4</option>
 					<option value="item-5">Item 5</option>
 				</select>
+				<input class="search" type="button" onclick="search()" value="Search">
 			</div>
 			<div id="reset-container" class="layout-test">
 				<input type="button" onclick="reset()" value="Reset Selection">
@@ -72,6 +74,7 @@
 					<li>Answer 3</li>
 					<li>Answer 4</li>
 				</ul>
+				<img id= "chart" src="./images/chart.png" style= "display: none;"/>
 			</div>
 		</div>
 	</div>
@@ -81,6 +84,11 @@
 	<script>
 		function reset() {
 			$(".check").prop("checked", false);
+			$("#chart").hide();
+		}
+
+		function search() {
+			$("#chart").show();
 		}
 	</script>
 </body>
