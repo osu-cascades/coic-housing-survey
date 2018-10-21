@@ -1,5 +1,9 @@
+function hideResults() {
+	$("#chart").hide();
+}
+
 function reset() {
-	$(".check").prop("checked", false);
+	$(".checkbox").prop("checked", false);
 	$("#chart").hide();
 }
 

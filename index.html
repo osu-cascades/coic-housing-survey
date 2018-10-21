@@ -1,6 +1,7 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html lang="">
 <head>
+
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<title>Main Page</title>
@@ -8,81 +9,112 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="manifest" href="site.webmanifest">
-	<link rel="apple-touch-icon" href="icon.png">
-	<!-- Place favicon.ico in the root directory -->
 
+	<!-- Custom CSS -->
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 
-	<!-- Compiled and minified Materialize CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
 </head>
+
 <body>
 	<div class="grid-container">
-		<div id="header-container layout-test">
-			<div class="inline-block">
-				<img id="logo-img" src="./images/header3.jpg" alt="COIC Logo">
-			</div>
-		</br>
-			<div class="inline-block">
-				<h1>COIC Data Library</h1>
-			</div>
+		<div id="header-container" class="layout-test">
+			<img id="logo-img" src="images/header3.jpg" alt="COIC Logo">
+			<h1>COIC Data Library</h1>
 		</div>
-		<div id="body-container" class="grid-container layout-test">
-			<div id="stakeholder-container" class="layout-test">
+	</div>
+
+	<div id="body-container" class="grid-container layout-test">
+		<div id="form-container" class="layout-test">
+			<form id="query-form" action="#">
 				<h3>Stakeholder Type</h3>
-				<form action="">
-					<input class="check" type="checkbox" name="stakeholder-type" value="Item 1">General Public </br>
-					<input class="check" type="checkbox" name="stakeholder-type" value="Item 2">Housing Advocate </br>
-					<input class="check" type="checkbox" name="stakeholder-type" value="Item 3">Builder, developer, or real estate professional </br>
-					<input class="check" type="checkbox" name="stakeholder-type" value="Item 4">Employer </br>
-					<input class="check" type="checkbox" name="stakeholder-type" value="Item 5">Health, human service, or public safety provider </br>
-					<input class="check" type="checkbox" name="stakeholder-type" value="Item 6">Local government staff </br>
-					<input class="check" type="checkbox" name="stakeholder-type" value="Item 7">Landlord, property manager, or HOA manager </br>
-					<input class="check" type="checkbox" name="stakeholder-type" value="Item 7">Other </br>
-				</form>
-			</div>
-			<div id="geography-container" class="layout-test">
+				<fieldset>
+					<div>
+						<input class="bob" type="checkbox" id="general-public" " value="Item 1">General Public
+					</div>
+					<div>
+						<input class="checkbox" type="checkbox" name="stakeholder-type" value="Item 2">Housing Advocate
+					</div>
+					<div>
+						<input class="checkbox" type="checkbox" name="stakeholder-type" value="Item 3">Builder, developer, or real estate professional
+					</div>
+					<input class="checkbox" type="checkbox" name="stakeholder-type" value="Item 4">Employer
+					<div>
+						<input class="checkbox" type="checkbox" name="stakeholder-type" value="Item 5">Health, human service, or public safety provider
+					</div>
+					<div>
+						<input class="checkbox" type="checkbox" name="stakeholder-type" value="Item 6">Local government staff
+					</div>
+					<div>
+						<input class="checkbox" type="checkbox" name="stakeholder-type" value="Item 7">Landlord, property manager, or HOA manager
+					</div>
+					<div>
+						<input class="checkbox" type="checkbox" name="stakeholder-type" value="Item 7">Other
+					</div>
+				</fieldset>
 				<h3>Geographic Region</h3>
-				<form action="">
-					<input class="check" type="checkbox" name="stakeholder-type" value="Item 1">Bend </br>
-					<input class="check" type="checkbox" name="stakeholder-type" value="Item 2">Culver </br>
-					<input class="check" type="checkbox" name="stakeholder-type" value="Item 3">La Pine </br>
-					<input class="check" type="checkbox" name="stakeholder-type" value="Item 4">Madras </br>
-					<input class="check" type="checkbox" name="stakeholder-type" value="Item 5">Metolius </br>
-					<input class="check" type="checkbox" name="stakeholder-type" value="Item 6">Prineville </br>
-					<input class="check" type="checkbox" name="stakeholder-type" value="Item 7">Redmond </br>
-					<input class="check" type="checkbox" name="stakeholder-type" value="Item 8">Sisters </br>
-					<input class="check" type="checkbox" name="stakeholder-type" value="Item 9">Warm Springs </br>
-					<input class="check" type="checkbox" name="stakeholder-type" value="Item 10">Unincorprated Deschutes County </br>
-					<input class="check" type="checkbox" name="stakeholder-type" value="Item 11">Unincorprated Jefferson County </br>
-				</form>
-			</div>
-			<div id="question-container" class="layout-test">
-				<select name="question-select" id="question-select">
-					<option value="item-1">Item 1</option>
-					<option value="item-2">Item 2</option>
-					<option value="item-3">Item 3</option>
-					<option value="item-4">Item 4</option>
-					<option value="item-5">Item 5</option>
-				</select>
-				<input class="search" type="button" onclick="search()" value="Search">
-			</div>
-			<div id="reset-container" class="layout-test">
-				<input type="button" onclick="reset()" value="Reset Selection">
-			</div>
-			<div id="answers-continer" class="layout-test">
-				<img id= "chart" src="./images/chart.png" style= "display: none;"/>
-			</div>
+				<fieldset>
+					<div>
+						<input class="checkbox" type="checkbox" name="stakeholder-type" value="Item 1">Bend
+					</div>
+					<div>
+						<input class="checkbox" type="checkbox" name="stakeholder-type" value="Item 2">Culver
+					</div>
+					<div>
+						<input class="checkbox" type="checkbox" name="stakeholder-type" value="Item 3">La Pine
+					</div>
+					<div>
+						<input class="checkbox" type="checkbox" name="stakeholder-type" value="Item 4">Madras
+					</div>
+					<div>
+						<input class="checkbox" type="checkbox" name="stakeholder-type" value="Item 5">Metolius
+					</div>
+					<div>
+						<input class="checkbox" type="checkbox" name="stakeholder-type" value="Item 6">Prineville
+					</div>
+					<div>
+						<input class="checkbox" type="checkbox" name="stakeholder-type" value="Item 7">Redmond
+					</div>
+					<div>
+						<input class="checkbox" type="checkbox" name="stakeholder-type" value="Item 8">Sisters
+					</div>
+					<div>
+						<input class="checkbox" type="checkbox" name="stakeholder-type" value="Item 9">Warm Springs
+					</div>
+					<div>
+						<input class="checkbox" type="checkbox" name="stakeholder-type" value="Item 10">Unincorprated Deschutes County
+					</div>
+					<div>
+						<input class="checkbox" type="checkbox" name="stakeholder-type" value="Item 11">Unincorprated Jefferson County
+					</div>
+				</fieldset>
+				<div id="question-container" class="layout-test">
+					<select name="question-select" id="question-select" form="query-form">
+						<option value="select-question">-- select survey question --</option>
+						<option value="item-1">Item 1</option>
+						<option value="item-2">Item 2</option>
+						<option value="item-3">Item 3</option>
+						<option value="item-4">Item 4</option>
+						<option value="item-5">Item 5</option>
+					</select>
+					<input class="search" type="button" value="Search" onclick="search()">
+					<input class="reset" type="button" value="Reset Form" onclick="reset()">
+				</div>
+			</form>
+		</div>
+		<div id="chart" class="layout-test">
+			<img src="images/chart.png" />
 		</div>
 	</div>
 
 	<!-- Jquery CDN -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-	<!-- Compiled and minified Materialize JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<!-- Custom JavaScript -->
+	<script type="text/javascript" src="javascript/main.js"></script>
 
-    <script type="text/javascript" src="javascript/main.js"></script>
+	<script>
+		$(document).ready(hideResults());
+	</script>
+
 </body>
 </html>

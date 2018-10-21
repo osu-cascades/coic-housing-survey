@@ -1,5 +1,5 @@
 #logo-img {
-	size: 150 150;
+	width: 100%;
 }
 
 .inline-block {
@@ -13,8 +13,4 @@
 .layout-test {
 	margin: 5px;
 	border: 2px solid red;
-}
-
-ul li {
-
 }
