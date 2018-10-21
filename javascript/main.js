@@ -1,5 +1,8 @@
-<script>
 function reset() {
-	document.getElementById("check").checked = false;
+	$(".check").prop("checked", false);
+	$("#chart").hide();
 }
-</script>
+
+function search() {
+	$("#chart").show();
+}
