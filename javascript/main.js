@@ -1,12 +1,8 @@
-function hideResults() {
-	$("#chart").hide();
+function search() {
+	$(".chart").show();
 }
 
 function reset() {
 	$(".checkbox").prop("checked", false);
-	$("#chart").hide();
-}
-
-function search() {
-	$("#chart").show();
+	$(".chart").hide();
 }

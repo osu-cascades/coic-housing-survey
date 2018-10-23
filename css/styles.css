@@ -1,16 +1,1 @@
-#logo-img {
-	width: 100%;
-}
-
-.inline-block {
-	display: inline-block;
-}
-
-.grid-container {
-	display: grid;
-}
-
-.layout-test {
-	margin: 5px;
-	border: 2px solid red;
-}
+#logo-img{width:100%}.inline-block{display:inline-block}.grid-container{display:grid}.layout-test{margin:5px;border:2px solid red}/*# sourceMappingURL=styles.css.map */
