@@ -101,10 +101,39 @@
 				</div>
 			</form>
 		</div>
+		<ul id="data">
+		</ul>
 		<div id="chart" class="chart" style="display: none;">
 			<img src="images/chart.png" />
 		</div>
 	</div>
+
+	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyDCi495s5IkhDiD77yvTWInQVyRwUMS0sw",
+	    authDomain: "coic-housing-survey.firebaseapp.com",
+	    databaseURL: "https://coic-housing-survey.firebaseio.com",
+	    projectId: "coic-housing-survey",
+	    storageBucket: "coic-housing-survey.appspot.com",
+	    messagingSenderId: "795413976729"
+	  };
+	  firebase.initializeApp(config);
+
+	  var userDataRef = firebase.database().ref("1").orderByKey();
+		userDataRef.once("value").then(function(snapshot) {
+			snapshot.forEach(function(childSnapshot) {
+			  var key = childSnapshot.key;
+			  var childData = childSnapshot.val();              
+
+			  var name_val = childSnapshot.val().1;
+
+			  $("#data").append("<p>" + name_val + "</p><br>");
+
+			  });
+		});
+	</script>
 
 	<!-- Jquery CDN -->
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
