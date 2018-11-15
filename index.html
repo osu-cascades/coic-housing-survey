@@ -15,7 +15,7 @@
 
 </head>
 
-<body>
+<body onload="myDB()">
 	<div class="grid-container">
 		<div id="header-container" class="">
 			<img id="logo-img" src="images/header3.jpg" alt="COIC Logo">
@@ -120,23 +120,30 @@
 	    messagingSenderId: "795413976729"
 	  };
 	  firebase.initializeApp(config);
-
-	  var userDataRef = firebase.database().ref("1").orderByKey();
-		userDataRef.once("value").then(function(snapshot) {
-			snapshot.forEach(function(childSnapshot) {
-			  var key = childSnapshot.key;
-			  var childData = childSnapshot.val();              
-
-			  var name_val = childSnapshot.val().1;
-
-			  $("#data").append("<p>" + name_val + "</p><br>");
-
-			  });
-		});
 	</script>
 
 	<!-- Jquery CDN -->
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script>
+			var userDataRef = firebase.database().ref('1/0').orderByKey();
+				userDataRef.once('value').then(function(snapshot) {
+					snapshot.forEach(function(childSnapshot) {
+					  var key = childSnapshot.key;
+					  var childData = childSnapshot.val();              
+
+					  var name_val = childSnapshot.val();
+					  alert(name_val);
+					  var node = document.createElement('li');
+					  var textnode = document.createTextNode(name_val);
+					  node.appendChild(textnode);
+					  
+
+					  document.getElementById('data').appendChild(node);
+
+					  });
+				});
+	</script>
 
 	<!-- Custom JavaScript -->
 	<script src="javascript/main.js"></script>
