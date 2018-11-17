@@ -8,6 +8,8 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+
 	<link rel="manifest" href="site.webmanifest">
 
 	<!-- Custom CSS -->
@@ -31,7 +33,7 @@
 
 </head>
 
-<body>
+<body onload="myDB()">
 	<div class="grid-container">
 		<div id="header-container" class="">
 			<img id="logo-img" src="images/header3.jpg" alt="COIC Logo">
@@ -117,13 +119,88 @@
 				</div>
 			</form>
 		</div>
-		<div id="chart" class="chart" style="display: none;">
-			<img src="images/chart.png" />
-		</div>
+		<ul id="data">
+		</ul>
+
+		<canvas id="myChart" width="400" height="400"></canvas>
+
 	</div>
 
+	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyDCi495s5IkhDiD77yvTWInQVyRwUMS0sw",
+	    authDomain: "coic-housing-survey.firebaseapp.com",
+	    databaseURL: "https://coic-housing-survey.firebaseio.com",
+	    projectId: "coic-housing-survey",
+	    storageBucket: "coic-housing-survey.appspot.com",
+	    messagingSenderId: "795413976729"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+
 	<!-- Jquery CDN -->
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script>
+			var myArray = [];
+			var i = 0;
+			var userDataRef = firebase.database().ref('1/0').orderByKey();
+				userDataRef.once('value').then(function(snapshot) {
+					snapshot.forEach(function(childSnapshot) {
+					  var key = childSnapshot.key;             
+					  var name_val = childSnapshot.val();
+					  myArray.push(name_val);
+					  alert(myArray[i]);
+					  var node = document.createElement('li');
+					  var textnode = document.createTextNode(name_val);
+					  node.appendChild(textnode);
+					  document.getElementById('data').appendChild(node);
+					  i++;
+					  });
+				});
+
+	var ctx = document.getElementById("myChart");
+	var myChart = new Chart(ctx, {
+	    type: 'bar',
+	    data: {
+	        labels: myArray,
+	        datasets: [{
+	            label: '# of Votes',
+	            data: [12, 19, 3, 5, 2, 3],
+	            backgroundColor: [
+	                'rgba(255, 99, 132, 0.2)',
+	                'rgba(54, 162, 235, 0.2)',
+	                'rgba(255, 206, 86, 0.2)',
+	                'rgba(75, 192, 192, 0.2)',
+	                'rgba(153, 102, 255, 0.2)',
+	                'rgba(255, 159, 64, 0.2)'
+	            ],
+	            borderColor: [
+	                'rgba(255,99,132,1)',
+	                'rgba(54, 162, 235, 1)',
+	                'rgba(255, 206, 86, 1)',
+	                'rgba(75, 192, 192, 1)',
+	                'rgba(153, 102, 255, 1)',
+	                'rgba(255, 159, 64, 1)'
+	            ],
+	            borderWidth: 1
+	        }]
+	    },
+	    options: {
+	    	responsive: false,
+            maintainAspectRatio: false,
+	        scales: {
+	            yAxes: [{
+	                ticks: {
+	                    beginAtZero:true
+	                }
+	            }]
+	        }
+	    }
+	});
+	</script>
 
 	<!-- Custom JavaScript -->
 	<script src="javascript/main.js"></script>
