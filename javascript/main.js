@@ -33,10 +33,10 @@ async function getData() {
             var key = childSnapshot.key;
             name_val = childSnapshot.val();
             myArray.push(name_val);
-            var node = document.createElement('li');
+            /*var node = document.createElement('li');
             var textnode = document.createTextNode(name_val);
             node.appendChild(textnode);
-            document.getElementById('data').appendChild(node);
+            document.getElementById('data').appendChild(node);*/
         });
     });
     return myArray;
