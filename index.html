@@ -95,16 +95,17 @@
 						<option value="item-5">Item 5</option>
 					</select>
 
-					<input class="search" type="button" value="Search" onclick=getData()>
+					<input class="search" type="button" value="Search" onclick=search()>
 
-					<input class="reset" type="button" value="Reset Form" onclick=createChart()>
+					<input class="reset" type="button" value="Reset Form" onclick=reset()>
 				</div>
 			</form>
 		</div>
 
 		<ul id="data"></ul>
-
-		<canvas id="myChart" width="400" height="400"></canvas>
+		<div class="chart-container">
+			<canvas id="myChart" width="400" height="400"></canvas>
+		</div>
 	</div>
 
 	<!-- CHARTING LIBRARY -->

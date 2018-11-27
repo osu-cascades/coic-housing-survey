@@ -1,11 +1,12 @@
-// function search() {
-// 	$(".chart").show();
-// }
+async function search() {
+ 	var a = await getData();
+    createChart();
+}
 
-// function reset() {
-//     $(".checkbox").prop("checked", false);
-//     $(".chart").hide();
-// }
+function reset() {
+    $("#myChart").hide();
+    $(".checkbox").prop("checked", false);
+}
 
 function initializeDatabase() {
 	var config = {
@@ -22,12 +23,12 @@ function initializeDatabase() {
 function getQuestions() {}
 
 
-function getData() {
+async function getData() {
     // gets data from database
     myArray = [];
     var i = 0;
     var userDataRef = firebase.database().ref('1/0').orderByKey();
-    userDataRef.once('value').then(function(snapshot) {
+    return userDataRef.once('value').then(function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
             var key = childSnapshot.key;
             name_val = childSnapshot.val();
@@ -38,6 +39,8 @@ function getData() {
             document.getElementById('data').appendChild(node);
         });
     });
+    return myArray;
+    //createChart(); I don't understand why it won't work here
 }
 
 function printArray(array) {
@@ -48,7 +51,7 @@ function printArray(array) {
 
 function createChart() {
     // draws the chart for answers
-    var ctx = document.getElementById("myChart");
+    var ctx = $("#myChart");
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
