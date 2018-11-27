@@ -4,8 +4,7 @@ async function search() {
 }
 
 function reset() {
-    $("#myChart").hide();
-    $(".checkbox").prop("checked", false);
+    history.go(0);
 }
 
 function initializeDatabase() {
